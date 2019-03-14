@@ -25,8 +25,13 @@ export class AppComponent {
     console.log(container.scrollLeft, item.scrollLeft);
     console.log(`item Offset -> ${item.offsetLeft}`);
 
-    console.log(container.offsetWidth, frame.offsetWidth);
-    container.scrollLeft = item.offsetLeft + (frame.offsetWidth / 2);
+    console.log(
+      item.clientWidth,
+      container.offsetWidth, 
+      frame.offsetWidth / 2, 
+      item.offsetLeft + (frame.offsetWidth / 2));
+
+    container.scrollLeft = item.offsetLeft - (frame.offsetWidth / 2);
 
     // debugger
   }
